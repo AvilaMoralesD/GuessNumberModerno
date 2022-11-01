@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name" translatable="false">GuessNumber</string>
+    <string name="tvConfigTitleName">Insert your name: </string>
+    <string name="your_name">your name</string>
+    <string name="btConfig">Let\'s play!</string>
+    <string name="default_nTries" translatable="false">7</string>
+    <string name="previous_guess">Previous guess:</string>
+    <string name="placeholder" translatable="false">PH</string>
+    <string name="attempts_left">Attempts left:</string>
+    <string name="next_guess">Next guess…</string>
+    <string name="btPlay">Try it</string>
+    <string name="emptyName">Please input a name</string>
+    <string name="emptyGuess">Insert a numeric guess [1, 100)</string>
+    <string name="configBar">Initial configuration</string>
+    <string name="celebrate">🎊Celebrate!🎊</string>
+    <string name="tvConfigTitleTries">Insert max. tries: </string>
+    <string name="youloseTitle">You lost…</string>
+    <string name="youwonTitle">You won!</string>
+    <string name="sadEmoji" translatable="false">😭</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_won">You won!</string>
+    <string name="restart" translatable="false">↻</string>
+    <string name="number_of_tries">Number of tries:</string>
+    <string name="confettiBall" translatable="false">🎊</string>
+    <string name="youLostInferior">You lost the game</string>
+    <string name="sorry">Sorry!</string>
+    <string name="cryButton">💧Cry about it💧</string>
+    <string name="cryingEmoji" translatable="false">😭</string>
+    <string name="theGame">The Game</string>
+    <string name="actualGoal">"Actual goal: "</string>
+    <string name="action_AboutUs">AboutUs</string>
+</resources>

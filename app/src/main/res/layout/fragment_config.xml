@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="gameManager"
+        type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
+    <variable
+        name="appl"
+        type="com.dami.guessnumbermoderno.GuessNumberApplication" />
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ConfigFragment">
+
+
+        <EditText
+            android:id="@+id/etConfigInputTries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="8"
+            android:hint="@string/default_nTries"
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="@={`` + gameManager.nTries}"
+            android:minHeight="@dimen/dim1"
+            android:textSize="@dimen/dim2"
+            app:layout_constraintBottom_toBottomOf="@+id/tvConfigTitleTries"
+            app:layout_constraintStart_toStartOf="@+id/etConfigInputName"
+            app:layout_constraintTop_toTopOf="@+id/tvConfigTitleTries" />
+
+        <EditText
+            android:id="@+id/etConfigInputName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="8"
+            android:hint="@string/your_name"
+            android:inputType="textPersonName"
+            android:text="@={appl.user}"
+            android:minHeight="@dimen/dim3"
+            android:textColorHint="@color/textColorHint"
+            app:layout_constraintBottom_toBottomOf="@+id/tvConfigTitleName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvConfigTitleName"
+            app:layout_constraintTop_toTopOf="@+id/tvConfigTitleName"/>
+
+        <TextView
+            android:id="@+id/tvConfigTitleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="@string/tvConfigTitleName"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvConfigTitleTries"
+            app:layout_constraintEnd_toStartOf="@+id/etConfigInputName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/tvConfigTitleTries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dim4"
+            android:layout_marginBottom="@dimen/dim5"
+            android:text="@string/tvConfigTitleTries"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvConfigTitleName" />
+
+        <Button
+            android:id="@+id/btConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim6"
+            android:text="@string/btConfig"
+            android:textAllCaps="false"
+            android:textSize="@dimen/dim7"
+            android:backgroundTint="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etConfigInputTries" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

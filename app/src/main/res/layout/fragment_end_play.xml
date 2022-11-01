@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="gameManager"
+            type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
+        <variable
+            name="username"
+            type="com.dami.guessnumbermoderno.GuessNumberApplication" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EndPlayFragment">
+
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confettiBall"
+            android:textSize="@dimen/dim18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.57" />
+
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim19"
+            android:backgroundTint="@color/green_dark"
+            android:text="@string/celebrate"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emoji" />
+
+        <TextView
+            android:id="@+id/tvSuperior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim20"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/congratulations"
+            android:textSize="@dimen/dim21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim22"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@{username.user}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSuperior"
+            app:layout_constraintStart_toStartOf="@+id/tvSuperior"
+            app:layout_constraintTop_toBottomOf="@+id/tvSuperior" />
+
+        <TextView
+            android:id="@+id/tvInferior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim23"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/you_won"
+            android:textSize="@dimen/dim24"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="@dimen/dim25"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim26"
+            android:backgroundTint="@color/green_dark"
+            android:text="@string/restart"
+            android:textAllCaps="false"
+            android:textSize="@dimen/dim27"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvtitletries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_tries"
+            app:layout_constraintBottom_toTopOf="@+id/btnEnd"
+            app:layout_constraintStart_toStartOf="@+id/btnEnd"
+            app:layout_constraintTop_toBottomOf="@+id/emoji"
+            app:layout_constraintVertical_bias="0.506" />
+
+        <TextView
+            android:id="@+id/tvEndTries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            app:layout_constraintBottom_toBottomOf="@+id/tvtitletries"
+            app:layout_constraintEnd_toEndOf="@+id/btnEnd"
+            app:layout_constraintStart_toEndOf="@+id/tvtitletries"
+            app:layout_constraintTop_toTopOf="@+id/tvtitletries" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

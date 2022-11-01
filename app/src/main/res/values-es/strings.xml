@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tvConfigTitleName">Introduce tu nombre:</string>
+    <string name="your_name">tu nombre</string>
+    <string name="btConfig">¡A jugar!</string>
+    <string name="previous_guess">Intento previo:</string>
+    <string name="attempts_left">Intentos restantes:</string>
+    <string name="next_guess">Siguiente intento…</string>
+    <string name="btPlay">Inténtalo</string>
+    <string name="emptyName">Introduce un nombre</string>
+    <string name="emptyGuess">Introduce un número a probar [1, 100)</string>
+    <string name="configBar">Configuración inicial</string>
+    <string name="celebrate">🎊¡Celebrar!🎊</string>
+    <string name="tvConfigTitleTries">Inserta intentos máx.: </string>
+    <string name="youloseTitle">Perdiste…</string>
+    <string name="youwonTitle">¡Ganaste!</string>
+    <string name="congratulations">¡Felicidades!</string>
+    <string name="you_won">¡Has ganado!</string>
+    <string name="number_of_tries">"Número de intentos: "</string>
+    <string name="youLostInferior">Perdiste el juego</string>
+    <string name="sorry">¡Mala suerte!</string>
+    <string name="cryButton">💧Llora fuerte💧</string>
+    <string name="theGame">El juego</string>
+    <string name="actualGoal">"Número objetivo: "</string>
+    <string name="action_AboutUs">Más información</string>
+</resources>

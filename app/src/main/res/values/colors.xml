@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="guess_number_launcher_background">#000000</color>
+    <color name="purple_200">#4BC6FF</color>
+    <color name="purple_500">#0020EE</color>
+    <color name="purple_700">#001EB3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_blue">#66B8FF</color>
+    <color name="dark_blue">#4D5EFF</color>
+    <color name="green_dark">#1E8800</color>
+    <color name="green_light">#14C900</color>
+    <color name="red_dark">#A30000</color>
+    <color name="red_light">#FF8A8A</color>
+    <color name="textColorHint">#757575</color>
+    <color name="tears">#99FFFF</color>
+    <color name="hintText">#757575</color>
+</resources>

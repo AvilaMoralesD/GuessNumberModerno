@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameManager"
+            type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
+        <variable
+            name="anteriorIntento"
+            type="com.dami.guessnumbermoderno.PlayFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PlayFragment">
+
+        <TextView
+            android:id="@+id/tvPlayTriesLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:text="@={`` + gameManager.remainingTries}"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/tvPlayLabelTriesLeft"
+            app:layout_constraintStart_toStartOf="@+id/tvPlayLabelTriesLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayLabelTriesLeft" />
+
+        <EditText
+            android:id="@+id/etPlayNextGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dim8"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/next_guess"
+            android:inputType="number"
+            android:maxLength="2"
+            android:minHeight="@dimen/dim9"
+            android:textColorHint="@color/hintText"
+            app:layout_constraintBottom_toTopOf="@+id/btPlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPlayLabelPreviousGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/previous_guess"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/btPlay"
+            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btPlay" />
+
+        <TextView
+            android:id="@+id/tvPlayPreviousGuess"
+            android:layout_width="@dimen/dim10"
+            android:layout_height="@dimen/dim11"
+            android:gravity="center"
+            android:text="@{anteriorIntento}"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/tvPlayLabelPreviousGuess"
+            app:layout_constraintStart_toStartOf="@+id/tvPlayLabelPreviousGuess"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayLabelPreviousGuess" />
+
+        <TextView
+            android:id="@+id/tvPlayLabelTriesLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dim12"
+            android:gravity="center"
+            android:text="@string/attempts_left"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toEndOf="@+id/btPlay"
+            app:layout_constraintTop_toBottomOf="@+id/btPlay" />
+
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="@dimen/dim13"
+            android:layout_height="@dimen/dim14"
+            android:layout_marginBottom="@dimen/dim15"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btPlay"
+            app:srcCompat="@drawable/arrow"
+            app:tint="@color/dark_blue"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim16"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/btPlay"
+            android:textAllCaps="false"
+            android:textSize="@dimen/dim17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/etPlayNextGuess"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="@+id/etPlayNextGuess" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
