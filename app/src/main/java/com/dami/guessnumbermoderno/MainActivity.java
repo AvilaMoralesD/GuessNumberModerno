@@ -71,18 +71,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Este metodo cambia el color de la barra de notificaciones, el cabezal de la activity y su texto
+     * Este metodo cambia el color de la barra de notificaciones.
      *
      * @param colorNotification Color para barra de notifiaciones
-     * @param colorSupport      Color para fondo de título
-     * @param textSupport       Texto del título
      */
-    public void changeBars(int colorNotification, int colorSupport, int textSupport) {
+    public void changeBars(int colorNotification) {
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(getColor(colorNotification));
-        getSupportActionBar().setTitle(textSupport);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(colorSupport)));
     }
 }

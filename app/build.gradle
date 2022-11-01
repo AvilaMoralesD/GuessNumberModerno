@@ -48,8 +48,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
-    // implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //  implementation files('C:/SDK/platforms/android-32/android.jar')
+    /*implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('C:/SDK/platforms/android-32/android.jar')*/
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

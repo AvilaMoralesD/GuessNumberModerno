@@ -8,7 +8,7 @@
             name="gameManager"
             type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
         <variable
-            name="username"
+            name="applic"
             type="com.dami.guessnumbermoderno.GuessNumberApplication" />
     </data>
 
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim22"
             android:fontFamily="sans-serif-condensed"
-            android:text="@{username.user}"
+            android:text="@{applic.user}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/tvSuperior"
             app:layout_constraintStart_toStartOf="@+id/tvSuperior"

@@ -14,21 +14,22 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dami.guessnumbermoderno.databinding.FragmentPlayBinding;
-import com.dami.guessnumbermoderno.databinding.FragmentPlayBindingImpl;
 
 import nl.dionsegijn.konfetti.core.Angle;
 
+/**
+ * Segundo Fragment
+ */
 public class PlayFragment extends Fragment {
 
     private FragmentPlayBinding binding;
-    int lastTry;
     int lastArrowDirection = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPlayBinding.inflate(inflater);
         binding.setGameManager(PlayFragmentArgs.fromBundle(getArguments()).getGameman());
-        ((MainActivity) getActivity()).changeBars(R.color.light_blue, R.color.dark_blue, R.string.theGame);
+        ((MainActivity) getActivity()).changeBars(R.color.light_blue);
         return binding.getRoot();
     }
 
@@ -52,15 +53,15 @@ public class PlayFragment extends Fragment {
         }
         int guessResult = binding.getGameManager().makeAGuess(Integer.parseInt(text));
         if (guessResult == 0) {
-            PlayFragmentDirections.ActionPlayFragmentToEndPlayFragment action = PlayFragmentDirections.actionPlayFragmentToEndPlayFragment(binding.getGameManager(),true);
+            PlayFragmentDirections.ActionPlayFragmentToEndPlayFragment action = PlayFragmentDirections.actionPlayFragmentToEndPlayFragment(binding.getGameManager(), true);
             NavHostFragment.findNavController(this).navigate(action);
             return;
         } else {   //Si no ha acertado actualiza los Views
-            lastArrowDirection = updateViews(guessResult,lastArrowDirection);
+            lastArrowDirection = updateViews(guessResult, lastArrowDirection);
         }
 
         if (!binding.getGameManager().canMakeGuess()) {   //Si se ha quedado sin intentos hacer Intent perdedor
-            PlayFragmentDirections.ActionPlayFragmentToEndPlayFragment action = PlayFragmentDirections.actionPlayFragmentToEndPlayFragment(binding.getGameManager(),false);
+            PlayFragmentDirections.ActionPlayFragmentToEndPlayFragment action = PlayFragmentDirections.actionPlayFragmentToEndPlayFragment(binding.getGameManager(), false);
             NavHostFragment.findNavController(this).navigate(action);
             return;
         }
@@ -69,7 +70,8 @@ public class PlayFragment extends Fragment {
 
     /**
      * Método que actualiza la parte visual de la Activity, tanto los campos de texto como la flecha
-     * @param result Si el número introducido es menor (-1) o mayor (1) que el objetivo
+     *
+     * @param result             Si el número introducido es menor (-1) o mayor (1) que el objetivo
      * @param lastArrowDirection Indica el ángulo de la flecha tras el intento anterior
      * @return El ángulo de la flecha en este intento
      */
@@ -78,21 +80,21 @@ public class PlayFragment extends Fragment {
         if (result == -1) {
             binding.imgArrow.startAnimation(rotateImage(lastArrowDirection, Angle.TOP));
         } else {
-            binding.imgArrow.startAnimation(rotateImage(lastArrowDirection,Angle.BOTTOM));
+            binding.imgArrow.startAnimation(rotateImage(lastArrowDirection, Angle.BOTTOM));
         }
-       /* vTries.setText(String.valueOf(gameman.getRemainingTries()));*/
         binding.tvPlayPreviousGuess.setText(String.valueOf(binding.etPlayNextGuess.getText()));
         binding.etPlayNextGuess.setText("");
-        return result == -1? Angle.TOP : Angle.BOTTOM;
+        return result == -1 ? Angle.TOP : Angle.BOTTOM;
     }
 
     /**
      * Método que anima la flecha indicadora
+     *
      * @param fromAngle Angulo de inicio
-     * @param toAngle Angulo final
+     * @param toAngle   Angulo final
      * @return Objeto de rotación
      */
-    private RotateAnimation rotateImage(int fromAngle, int toAngle){
+    private RotateAnimation rotateImage(int fromAngle, int toAngle) {
         RotateAnimation rotate = new RotateAnimation(fromAngle, toAngle, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(750);

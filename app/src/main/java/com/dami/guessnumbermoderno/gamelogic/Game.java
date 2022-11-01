@@ -58,7 +58,7 @@ public class Game implements Parcelable {
      * @param nTries Numero de intentos maximos
      */
     public void setnTries(int nTries) {
-        if (nTries < currentTry) this.nTries = nTries;
+        this.nTries = nTries;
     }
 
     /**

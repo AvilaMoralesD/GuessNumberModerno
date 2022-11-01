@@ -2,20 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<data>
-    <variable
-        name="gameManager"
-        type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
-    <variable
-        name="appl"
-        type="com.dami.guessnumbermoderno.GuessNumberApplication" />
-</data>
+
+    <data>
+        <variable
+            name="gameManager"
+            type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
+        <variable
+            name="applic"
+            type="com.dami.guessnumbermoderno.GuessNumberApplication" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ConfigFragment">
-
 
         <EditText
             android:id="@+id/etConfigInputTries"
@@ -41,13 +41,14 @@
             android:ems="8"
             android:hint="@string/your_name"
             android:inputType="textPersonName"
-            android:text="@={appl.user}"
             android:minHeight="@dimen/dim3"
+            android:text="@={applic.user}"
             android:textColorHint="@color/textColorHint"
             app:layout_constraintBottom_toBottomOf="@+id/tvConfigTitleName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvConfigTitleName"
-            app:layout_constraintTop_toTopOf="@+id/tvConfigTitleName"/>
+            app:layout_constraintTop_toTopOf="@+id/tvConfigTitleName" />
+
 
         <TextView
             android:id="@+id/tvConfigTitleName"
@@ -78,10 +79,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim6"
+            android:backgroundTint="@color/dark_blue"
             android:text="@string/btConfig"
             android:textAllCaps="false"
             android:textSize="@dimen/dim7"
-            android:backgroundTint="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etConfigInputTries" />

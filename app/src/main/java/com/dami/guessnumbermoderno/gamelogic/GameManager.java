@@ -3,12 +3,17 @@ package com.dami.guessnumbermoderno.gamelogic;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
+import com.dami.guessnumbermoderno.BR;
+
 import java.util.Random;
 
 /**
  * Clase que maneja el objeto POJO, aqui contiene toda la logica para poder jugar
  */
-public class GameManager implements Parcelable {
+public class GameManager extends BaseObservable implements Parcelable {
     private Game game;
     private int MINRANGE = 1;
     private int MAXRANGE = 100;
@@ -67,6 +72,7 @@ public class GameManager implements Parcelable {
      */
     public int makeAGuess(int guess) {
         increaseNTries();
+        notifyPropertyChanged(BR.remainingTries);
         return Integer.compare(guess, getGoal());
     }
 
@@ -96,9 +102,9 @@ public class GameManager implements Parcelable {
     }
 
     /**
-     * Getter del numero de intentos muximo del juego creado
+     * Getter del numero de intentos maximo del juego creado
      *
-     * @return Numero de intentos muximo
+     * @return Numero de intentos maximo
      */
     public int getNTries() {
         return game.getnTries();
@@ -118,6 +124,7 @@ public class GameManager implements Parcelable {
      *
      * @return Numero de intentos que quedan
      */
+    @Bindable
     public int getRemainingTries() { return game.getRemainingTries(); }
 
     /**

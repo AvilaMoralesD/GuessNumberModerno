@@ -4,13 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="gameManager"
-            type="com.dami.guessnumbermoderno.gamelogic.GameManager" />
-        <variable
-            name="anteriorIntento"
-            type="com.dami.guessnumbermoderno.PlayFragment" />
+            type="com.dami.guessnumbermoderno.gamelogic.GameManager"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,8 +20,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center"
-            android:text="@={`` + gameManager.remainingTries}"
             android:visibility="invisible"
+            android:text="@{`` + gameManager.remainingTries}"
             app:layout_constraintEnd_toEndOf="@+id/tvPlayLabelTriesLeft"
             app:layout_constraintStart_toStartOf="@+id/tvPlayLabelTriesLeft"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayLabelTriesLeft" />
@@ -64,7 +60,6 @@
             android:layout_width="@dimen/dim10"
             android:layout_height="@dimen/dim11"
             android:gravity="center"
-            android:text="@{anteriorIntento}"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/tvPlayLabelPreviousGuess"
             app:layout_constraintStart_toStartOf="@+id/tvPlayLabelPreviousGuess"

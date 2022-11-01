@@ -1,4 +1,4 @@
-# GuessNumber
+# GuessNumberModerno
 <p align="center">
   <img src="https://user-images.githubusercontent.com/102948169/196008730-94421e47-720a-49e9-8bc6-8ab388162f19.jpeg" />
   <img src="https://user-images.githubusercontent.com/102948169/196008729-2d7765c2-bf07-4273-9753-fed526296e7c.jpeg" />
@@ -9,18 +9,16 @@
 </p>
 ### Datos de la aplicación
 - Autor: Damián Ávila Morales
-- Versión API: 31
+- Versión API: 33
 - Versión Target: 32
+- Versión de proyecto: 2
 - Descripción: Aplicación de proyecto de adivinar un núemro
 
 ### Novedades implementadas no vistas en clase
 
-* Cambios de color de barras de notificaciones y de título, así como su texto
-* Inclusión de animaciones de imágenes
-* Inclusión de paquetes externos para el uso de efectos visuales
-* Retirada del uso del botón de retroceso en ciertas Activities
-* Adición de sonidos (carpeta raw) y la reproducción de éstos
-
+* Implementación de BaseObservable para actualización de variables múltiples veces
+* Construcción de un Converter para cambios bidireccionales de Data Bindings con tipos distintos (int y String)
+* Uso de parcelables que contienen otros parcelables
 
 ### Packages
 *  [nl.dionsegijn:konfetti-xml:2.0.2](https://github.com/DanielMartinus/Konfetti)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">GuessNumber</string>
+    <string name="app_name" translatable="false">GuessNumber2</string>
     <string name="tvConfigTitleName">Insert your name: </string>
     <string name="your_name">your name</string>
     <string name="btConfig">Let\'s play!</string>

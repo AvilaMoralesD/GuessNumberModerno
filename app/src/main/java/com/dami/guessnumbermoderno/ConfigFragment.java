@@ -1,15 +1,10 @@
 package com.dami.guessnumbermoderno;
 
-import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,16 +24,15 @@ public class ConfigFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentConfigBinding.inflate(inflater);
+        ((MainActivity) getActivity()).changeBars(R.color.light_blue);
         binding.setGameManager(new GameManager());
-        ((MainActivity) getActivity()).changeBars(R.color.light_blue, R.color.dark_blue, R.string.configBar);
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.btConfig.setOnClickListener(v -> {
-            startGame();
-        });
+
+        binding.btConfig.setOnClickListener(v -> startGame());
     }
 
     /**
@@ -53,13 +47,14 @@ public class ConfigFragment extends Fragment {
         }
         if (tries.isEmpty() || tries.equals("0")) {
             binding.getGameManager().setNTries(7);
+        } else {
+            //Esto debería evitármelo la clase Converter que hice, pero no lo hace y no puedo hacer el binding bidireccional si le entra int y guarda string y viceversa
+            binding.getGameManager().setNTries(Integer.parseInt(binding.etConfigInputTries.getText().toString()));
         }
-        ConfigFragmentDirections.ActionConfigFragmentToPlayFragment action = ConfigFragmentDirections.actionConfigFragmentToPlayFragment(binding.getGameManager());
+        ConfigFragmentDirections.ActionConfigFragmentToPlayFragment action =
+                ConfigFragmentDirections.actionConfigFragmentToPlayFragment(binding.getGameManager());
         NavHostFragment.findNavController(ConfigFragment.this).navigate(action);
     }
-
-    //-----------------------------------------
-
 
     @Override
     public void onDestroyView() {
